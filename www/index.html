@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MyElementTryAngular</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  test
+  <plus-minus-button-component my-attr-text="le texte qui va bien !"></plus-minus-button-component>
+  <script src="../elements/element.js"></script>
+
+  <script>
+    window.onload = () => {
+      console.log('Ok !!!');
+
+      const el = document.querySelector('plus-minus-button-component');
+      el.addEventListener('clickCustom', ($event) => {
+        console.log($event.detail.value);
+
+        window.setTimeout(() => {
+          console.log(el.getAttribute('count'));
+        }, 100);
+      });
+    };
+  </script>
+</body>
+</html>
